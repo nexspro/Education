@@ -1,4 +1,4 @@
-# Exercise 1 Hello World & Ruby Basics
+# Chapter 1: Hello World & Ruby Basics
 
 ### What I did
 Printed a custom greeting to test program output.  

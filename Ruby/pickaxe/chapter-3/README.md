@@ -1,4 +1,4 @@
-# Exercise 3 Classes, Objects & Visibility
+# Chapter 3: Classes, Objects & Visibility
 
 ### What I did
 Built a `ProductItem` class with price handling (cents conversion, safe updates).  

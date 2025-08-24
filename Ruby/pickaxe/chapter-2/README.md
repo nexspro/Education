@@ -1,4 +1,4 @@
-# Exercise 2 Collections, Conditionals & Blocks
+# Chapter 2: Collections, Conditionals & Blocks
 
 ### What I did
 Created and modified arrays with mixed data types.  
