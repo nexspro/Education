@@ -15,7 +15,7 @@ puts sum(6, 8)
 puts sum("Leo", "Cat")
 
 # Print another greeting message
-puts "Hello, Its Me"
+puts "Hello, It's me"
 
 # Print the current date and time using string interpolation
 puts "The time is now #{Time.now}"

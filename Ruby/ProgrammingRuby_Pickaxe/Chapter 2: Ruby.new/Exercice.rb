@@ -1,15 +1,25 @@
-# Create new Song objects with different titles
-track1 = Song.new("Sky of Dreams")
-track2 = Song.new("Echoes of Tomorrow")
-
 # Basic string and number methods
-puts "The fox".length   # Returns the number of characters
+puts "The fox".length # Returns the number of characters
 puts "marco".index("m") # Returns the index of 'm'
-puts 42.even?           # Check if 42 is even
+puts 42.even? # Check if 42 is even
 
 # Example method calls
-player.play(track1)
-player.play(track2)
+class Song
+  attr_reader :title
+  def initialize(title)
+    @title = title
+  end
+end
+class Player 
+  def play(song)
+    "Playing song: #{song.title}"
+  end
+end
+track1 = Song.new("Sky of Dreams")
+track2 = Song.new("Echoes of Tomorrow")
+player = Player.new
+puts player.play(track1)
+puts player.play(track2)
 
 # Working with integers
 number = -4567
@@ -61,7 +71,7 @@ puts instrument_family["saxophone"] # nil
 # Histogram with default values
 counter = Hash.new(0)
 puts counter["ruby"]  #0
-counter["ruby"] +=1
+counter["ruby"] += 1
 puts counter["ruby"]  #1
 
 # Symbols as keys
@@ -70,7 +80,6 @@ instrument_family = {
   clarinet: "woodwind",
   drum: "percussion"
 }
-
 puts instrument_family[:cello]
 puts "A clarinet is a #{instrument_family[:clarinet]} instrument"
 
@@ -85,20 +94,42 @@ else
 end
 
 # While loop example with conditions
+class Box
+  attr_reader :weight
+  def initialize(weight)
+    @weight = weight
+  end
+
+  def self.next_pallet
+    Box.new(rand(10..30))
+  end
+end
 pallets = 0
 weight = 0
 while weight < 100  && pallets <= 5
- box = next_pallet()  # Assume method exists
+ box = Box.next_pallet # Assume method exists
+ puts "new pallet: #{box.weight} kg"
  weight += box.weight
  pallets += 1
 end
+puts "Total weight: #{weight} kg"
+puts "Total pallets: #{pallets}"
 
 # Read from console and process
-while (line = gets)
+lines = [
+  "HELLO World",
+  "   Ruby Is GREAT  ",
+  "Rust language"
+]
+i = 0
+while i < lines.size
+  line = lines[i]
   puts line.downcase
+  i += 1
 end
 
 # Conditional inline syntax
+radiation = 3500
 if radiation > 3000
   puts "High radiation warning!"
 end
@@ -109,10 +140,12 @@ value = 4
 while value < 1000
   value *= value
 end
+puts value
 
 # One-line version
 value = 4
 value *= value while value < 1000
+puts value
 
 # Regex examples
 /Go|Rust/
@@ -120,27 +153,26 @@ value *= value while value < 1000
 /Ruby.*Python/
 /Java(Script|Ruby)/
 
+# First test
+line = "Rust"
+puts "Language found: #{line}" if line =~ /\b(Ruby|Rust)\b/
 
-line = gets 
-if line =~ /Ruby| Rust/
-  puts "Language found: #{line}"
-end
-
-line = gets
-if line.match?(/Ruby|Rust/)
-  puts "Language mentioned: #{line}"
-end
+# Second test
+line = "Ruby"
+puts "Language mentioned: #{line}" if line.match?(/\b(Ruby|Rust)\b/)
 
 # Substitution examples
-line = gets
-new_line = line.sub(/Python/, "Ruby")
-another_line = line.gsub(/JavaScript|Python/, "Ruby")
+line = "I like Python and JavaScript"
+puts line.sub(/Python/, "Ruby")
+puts line.gsub(/JavaScript|Python/, "Ruby")
 
 # Iterators and blocks
+member = "Alice"
+item = [member]
 item.each { puts "Hello"}
-item.each do 
-  club.enroll(member)
-  member.socialize
+item.each do |member|
+  puts "Enroll #{member} dans le club"
+  puts "#{member} socialise"
 end
 
 # Custom method with yield
@@ -162,7 +194,7 @@ say_something { |person, msg| puts "#{person} says #{msg}" }
 # Iterators
 animals = ["ant", "bee", "cat", "dog"]
 animals.each { |a| puts a }
-["cat", "dog" "horse"].each { |n| print n, " "}
+["cat", "dog", "horse"].each { |n| print n, " "}
 5.times { print "*" }
 3.upto(6) { |i| print i}
 ( "a".."e" ).each { |ch| print ch }
