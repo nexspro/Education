@@ -21,3 +21,8 @@ Object references: shared mutation vs. independent copies with `dup`.
 Immutability: `freeze` prevents further modifications (raises `FrozenError` on change).  
 Open classes: safely adding methods to existing classes (`Document`, `String#squish`).  
 Utility classes: grouping class-level helpers (`TextTools.squish`).
+
+
+### Requirements
+```bash
+gem install csv
