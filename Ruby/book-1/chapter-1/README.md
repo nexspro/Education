@@ -1,21 +1,17 @@
-# Chapter 1: Hello World & Ruby Basics
+# Chapter 1: Ruby Basics
 
-## What I Did
-
-- Wrote a small Ruby script that prints messages to STDOUT.
-
-- Defined a sum(a, b) method to show how + works with different types (numbers vs. strings).
-
-- Demonstrated string interpolation using Time.now.
-
-- Showed whitespace trimming with String#strip (including tabs/CRLF). 
+### What I did
+- Printed text to the console using `puts`.  
+- Defined a simple method (`sum`) that demonstrates polymorphic behavior of the `+` operator.  
+- Called the method with integers and strings to see addition vs concatenation.  
+- Used string interpolation with `Time.now` to include dynamic values in output.  
+- Removed leading and trailing whitespace from strings with `.strip`.  
 
 ### Key Concepts
+- **Console output**: `puts` prints strings and adds a newline automatically.  
+- **Methods**: define reusable code blocks with `def ... end`.  
+- **Polymorphic operators**: the `+` method works differently depending on the object type.  
+- **String interpolation**: embed Ruby expressions directly inside strings with `#{...}`.  
+- **Time**: `Time.now` returns the current system time; `strftime` can format it.  
+- **String cleanup**: `.strip` removes spaces, tabs, and newlines from both ends of a string.  
 
-- Polymorphic +: Integer + Integer → arithmetic; String + String → concatenation; mixing types raises TypeError.
-
-- String Interpolation: "The time is #{Time.now}" embeds evaluated Ruby expressions in strings.
-
-- Whitespace Trimming: String#strip removes leading/trailing spaces, tabs, and newline characters.
-
-- Duck Typing: Behavior depends on the receiver’s methods (any object implementing #+ can be used with sum). 

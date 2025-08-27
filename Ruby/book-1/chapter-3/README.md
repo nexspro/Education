@@ -1,28 +1,29 @@
-# Chapter 3: Classes, Objects & Visibility
+# Chapter 3: Objects, CSV & Encapsulation
+
+### Requirements  
+- Install the `csv` gem before running the scripts:  
+  ```bash
+  gem install csv
 
 ### What I did
-Built a `ProductItem` class with price handling (cents conversion, safe updates).  
-Created a `StockImporter` to read `Code,UnitPrice` from CSV and compute totals.  
-Used command-line arguments (`ARGV`) to load one or multiple CSV files.  
-Demonstrated method visibility with `public`, `protected`, and `private` methods.  
-Implemented a `Wallet` with encapsulated balance and a `Transfer` to move funds safely.  
-Explored object references vs. copies (`dup`) and immutability with `freeze`.  
-Reopened a `Document` class to add `uppercase_title`.  
-Extended core `String` with a `squish` method and built a `TextTools.squish` helper.  
-Added small demos to validate each concept.
+- Defined a `ProductItem` class with attributes, formatting, and price conversion helpers.  
+- Implemented a `StockImporter` class to load items from CSV files and compute totals.  
+- Used `ARGV` to process command-line arguments for dynamic CSV file loading.  
+- Created demo usage for `ProductItem` (discounts, cents conversion, printing).  
+- Practiced method visibility (`public`, `protected`, `private`) with multiple class styles.  
+- Built a `Wallet` and `Transfer` system to demonstrate encapsulation and object interaction.  
+- Explored object references, duplication (`dup`), and immutability (`freeze`).  
+- Reopened a class (`Document`) to add new behavior.  
+- Extended a core class (`String`) with a `squish` method.  
+- Wrote a utility class (`TextTools`) with a class method alternative to `squish`.  
 
 ### Key Concepts
-Classes & objects as reusable blueprints (`ProductItem`, `Wallet`, `Document`).  
-CSV processing with `CSV.foreach`, strict headers (`Code`, `UnitPrice`), and aggregation.  
-Command-line arguments (`ARGV`) for file input in CLI programs.  
-Method visibility: `public` (everywhere), `protected` (class/subclasses), `private` (receiverless).  
-Encapsulation: hide state (`balance`), expose intent (`deposit!`, `withdraw!`, `execute`).  
-Object references: shared mutation vs. independent copies with `dup`.  
-Immutability: `freeze` prevents further modifications (raises `FrozenError` on change).  
-Open classes: safely adding methods to existing classes (`Document`, `String#squish`).  
-Utility classes: grouping class-level helpers (`TextTools.squish`).
-
-
-### Requirements
-```bash
-gem install csv
+- **CSV parsing**: using Ruby’s `CSV.foreach` with headers.  
+- **Classes & objects**: constructors, attributes, custom `to_s`.  
+- **Value objects**: storing and formatting data safely.  
+- **Encapsulation**: `protected` attributes vs. public methods.  
+- **Method visibility**: `public`, `protected`, `private` usage patterns.  
+- **Command-line arguments**: handling with `ARGV`.  
+- **Object references**: shared references, duplication (`dup`), immutability (`freeze`).  
+- **Reopening classes**: extending existing classes by reopening them.  
+- **Core extensions vs utilities**: adding methods to core (`String#squish`) vs. standalone utility class (`TextTools.squish`).  
