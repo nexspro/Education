@@ -314,7 +314,7 @@ class Worker < BaseUnit
   end
 end
 
-puts Worker.new("unused arg").execute # instantiate (arg ignored) and run the chain
+puts Worker.new.execute # instantiate (arg ignored) and run the chain
 # Expected order:
 # auditing        (from Audit via prepend)
 # worker running  (from Worker)
