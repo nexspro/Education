@@ -1,0 +1,5 @@
+Bonjour à toi
+Ceci est une ligne de test
+On apprend Ruby ensemble
+Il fait bon dehors
+Salut
